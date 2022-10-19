@@ -26,7 +26,6 @@ export default {
       formIsValid: true,
     };
   },
-  computed: {},
   methods: {
     submitForm() {
       this.formIsValid = true;
