@@ -17,7 +17,7 @@
             :message="req.message"
           ></request-item>
         </ul>
-        <h3 v-else>You haven't received any requests yet.</h3>
+        <h3 v-else>You haven't received any requests yet!</h3>
       </base-card>
     </section>
   </div>
@@ -51,10 +51,9 @@ export default {
     async loadRequests() {
       this.isLoading = true;
       try {
-        this.$store.dispatch('requests/fetchRequests');
+        await this.$store.dispatch('requests/fetchRequests');
       } catch (error) {
-        console.log('caught error')
-        this.error = error.message || 'Something failed.';
+        this.error = error.message || 'Something failed!';
       }
       this.isLoading = false;
     },
