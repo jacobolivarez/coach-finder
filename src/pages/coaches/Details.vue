@@ -52,7 +52,7 @@ export default {
       return `${firstName} ${lastName}`;
     },
     contactLink() {
-      return this.$route.path + '/' + this.id + '/contact';
+      return this.$route.path + '/contact';
     },
     areas() {
       return this.selectedCoach.areas;
