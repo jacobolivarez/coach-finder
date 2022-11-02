@@ -72,9 +72,11 @@ export default {
         } else {
           await this.$store.dispatch('signup', actionPayload);
         }
-        } catch (error) {
-          this.error = error.essage || 'Failed to authenticate. Try again later.'
-        }
+        const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
+        this.$router.replace(redirectUrl);
+      } catch (error) {
+        this.error = error.essage || 'Failed to authenticate. Try again later.'
+      }
       this.isLoading = false;
     },
     switchAuthMode() {
